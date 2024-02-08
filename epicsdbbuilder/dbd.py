@@ -78,6 +78,9 @@ class ValidateDbField:
     # or if the value cannot be validly written.
     def ValidFieldValue(self, name, value):
         # First check the field name is valid
+        if name == "DTYP" and value == "Python Device":
+            print("Bypass ValidFieldValue for 'Python Device' as DTYP")
+            return
         self.ValidFieldName(name)
         value = str(value)
 
